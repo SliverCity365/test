@@ -1,0 +1,14 @@
+流程：
+brandchA对pub文件进行了修改并提交到master上，branchB先 1、git add . 2、git commit -m "" 3、 git pull origin master产生报错
+如果是conflict需要解决看下是否与其他人提交的代码冲突，如果是则git reset --merge 回退到pull之前，将此时pub文件整个替代B修改的pub文件
+再 1、git add . 2、git commit -m "" 3、 git pull origin master，完成后再把自己的修改git push -u origin branchB 等远程分支branchB已经有了，最后再git  git merge branchB
+
+
+OpenSSL SSL_read: Connection was reset, errno 10054 错误解决
+思路：打开Git命令页面，执行git命令脚本：修改设置，解除ssl验证
+解决办法：git config --global http.sslVerify "false"
+
+error: you need to resolve your current index first
+txt.txt: needs merge
+思路：有conflict没有解决，单纯回到merge之前的状态
+解决办法：git reset --merge 

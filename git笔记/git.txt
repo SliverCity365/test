@@ -1,0 +1,45 @@
+1、git init 初始化仓库
+2、git status 查看状态
+3、git add "测试文本.txt"   上传此文件/git  add -A   上传此目录下所有文件
+4、git commit -m "更新的信息"  来提交
+5、git log  查看日志
+6、git status 查看状态
+7、git diff   查看改变
+8、git checkout -- .       checkout
+9、git reset --hard 版本号前7位   版本回退命令
+10、git clean -xf  会删除未跟踪的文件 就是没有上传过的文件
+11、本地配置用户名和邮箱
+git config --global user.name "你的用户名"
+git config --global user.email "你的邮箱"
+12、ssh-keygen -t rsa -C "你的邮箱"  生成密钥
+13、ssh -T git@github.com 测试与github是否连接成功
+14、git remote add origin 你复制的地址  关联repository
+15、git push -u origin master 向远程推送
+16、git push 向远程推送
+17、git config --global push.default simple
+18、git clone remote_url 克隆到本地
+
+
+分支相关
+git clone remote_url 克隆到本地
+git remote add origin 你复制的地址  关联repository
+git branch -a(查看所有分支包括本地分支和远程分支).
+git checkout -b branchname(直接新建一个分支然后切换至新创建的分支).就是创建加切换分支.
+git push origin branchname 将新分支推送至GitHub.
+git checkout branchname(是切换分支名). 
+
+【附git分支命名规范，公司开发经常使用】
+
+1、git主分支(master)。它是自动建立，用于发布重大版本更新。
+
+2、git开发主分支(develop)。日常开发在此分支上进行。
+
+3、git临时性分支：主要是应对日常开发中的遇到的版本问题的。
+
+功能（feature）分支：它是为了开发某种特定功能，从Develop分支上面分出来的。开发完成后，要再并入Develop。可以采用feature-*的形式命名。
+
+预发布（release）分支：指发布正式版本之前（即合并到Master分支之前），我们可能需要有一个预发布的版本进行测试。
+预发布分支是从Develop分支上面分出来的，预发布结束以后，必须合并进Develop和Master分支。它的命名，可以采用release-*的形式。
+
+修补bug（hotfix）分支：软件正式发布以后，难免会出现bug。这时就需要创建一个分支，进行bug修补。
+修补bug分支是从Master分支上面分出来的。修补结束以后，再合并进Master和Develop分支。它的命名，可以采用hotfix-*的形式
